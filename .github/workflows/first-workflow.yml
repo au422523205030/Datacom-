@@ -1,0 +1,26 @@
+
+name: First GitHub Actions Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  PROJECT_NAME: "Datacom Introduction to Cloud"
+  GREETING: "Hello from GitHub Actions!"
+
+jobs:
+  first-job:
+    name: Run first workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "${GREETING}"
+
+      - name: Display project information
+        run: echo "Project: ${{ env.PROJECT_NAME }}"
+
+      - name: Confirm completion
+        run: echo "Workflow completed successfully."
